@@ -6,4 +6,4 @@
 - client.py would have to be ran with the IP configured for the connection.
 - persistence once ran on victims Linux/Debian Machine.
 - the ip you are wanting the victim to connect to would have to either be open, or firewall would have to be configured to the ip and port.
-- Worked with Linode and AWS.
+- Worked with [Linode](https://www.linode.com/) and [AWS](https://aws.amazon.com/).
