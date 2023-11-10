@@ -1,7 +1,6 @@
 import os
 import socket
 import platform
-from ctypes import windll
 import subprocess
 from time import sleep
 
@@ -18,15 +17,12 @@ class Vic:
             if platform.system() == 'Windows':
                 file_name = os.path.basename(__file__)
                 path = os.getcwd()
-                windll.kernel32.SetConsoleTitleW("CPU Dog")
-                windll.kernel32.SetConsoleTextAttribute(windll.kernel32.GetStdHandle(-11), 12)
                 
                 print("[*]: {0}".format(platform.system()))
                 print("[*]: Under Development")
                 print("[*]: Payload Path: {0}".format(path))
                 print("[*]: Payload Name: {0}".format(file_name))
-
-                windll.kernel32.SetConsoleTextAttribute(windll.kernel32.GetStdHandle(-11), 15)
+                print("[*]: Payload Path: {0}".format(path))
                 sleep(5)
                 
                 return exit()
