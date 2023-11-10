@@ -2,8 +2,6 @@
 import socket
 import sys
 import os
-from colorama import Fore
-from commands import *
 from commands import depens
 
 ALLOWED_AMOUNT_OF_CONNECTIONS = 2
@@ -23,12 +21,12 @@ class Server:
 
         server.listen(ALLOWED_AMOUNT_OF_CONNECTIONS)
         try:
-          print(f"{Fore.GREEN}[*]{Fore.RESET}: {Fore.RED}Called Init{Fore.RESET}")
+          print(f"[*]: Called Init")
           while len(self.clients) < ALLOWED_AMOUNT_OF_CONNECTIONS:
               client, client_addr = server.accept()
               self.clients.append((client, client_addr))
-              print(f"{Fore.GREEN}[*]{Fore.RESET}: Received Connection from", client_addr)
-          print(f"{Fore.GREEN}[*]: {Fore.GREEN}Finished Init")
+              print(f"[*]: Received Connection from", client_addr)
+          print(f"[*]: Finished Init")
         except Exception as e:
           print(f"Error {e}")
 
@@ -37,7 +35,7 @@ class Server:
     def command_clients(self):
         # reset command each time
         command = None
-        command = input(f'\n{Fore.CYAN}Command: {Fore.RESET}')
+        command = input(f'\nCommand: ')
 
         if command == "get_location":
             depens.display_clients(self)
@@ -201,7 +199,7 @@ if __name__ == '__main__':
         sys.exit(1)
 
     client_id = int(sys.argv[1])
-    server = Server('0.0.0.0', 0)
+    server = Server('192.168.1.73', 8000)
     # Welcome Screen
     depens.welcome(server, ALLOWED_AMOUNT_OF_CONNECTIONS)
     print("\033[0m")
